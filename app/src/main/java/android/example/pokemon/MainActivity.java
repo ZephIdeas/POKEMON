@@ -34,19 +34,6 @@ public class MainActivity extends Activity {
         // improve performance if you know that changes
         // in content do not change the layout size
         // of the RecyclerView
-        List<String> input = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
-            input.add("Test" + i);
-        }
-        showList(input);
-    }
-
-    public void showList(List<String> list) {
-
-        recyclerView.setHasFixedSize(true);
-        // use a linear layout manager
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
 
         //On crée un objet Gson
         Gson gson = new GsonBuilder()
@@ -70,6 +57,7 @@ public class MainActivity extends Activity {
             public void onResponse(Call<RestPokemonResponse> call, Response<RestPokemonResponse> response) {
                 RestPokemonResponse restPokemonResponse = response.body();
                 List<Pokemon> listPokemon = restPokemonResponse.getResults();
+                showList(listPokemon);
             }
 
             @Override
@@ -77,10 +65,16 @@ public class MainActivity extends Activity {
                 Log.d("Erreur", "API ERROR");
             }
         });
+    }
 
+    public void showList(List<Pokemon> list) {
 
-        //TODO Replace with Data Server
-        // define an adapter
+        recyclerView.setHasFixedSize(true);
+        // use a linear layout manager
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        //define an adapter
         mAdapter = new MyAdapter(list);
         recyclerView.setAdapter(mAdapter);
     }
