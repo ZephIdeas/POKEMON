@@ -20,6 +20,17 @@ public class MainController {
 
     private final MainActivity mainActivity;
 
+    private static MainController instance = null;
+
+    public static MainController getInstance(MainActivity mainActivity){
+        if (instance == null) {
+
+            instance = new MainController(mainActivity);
+        }
+
+        return instance;
+    }
+
     public MainController(MainActivity mainActivity) {
 
         this.mainActivity = mainActivity;
@@ -29,6 +40,7 @@ public class MainController {
     public void onCreate() {
 
         mainActivity.showLoader();
+
 
         //On crée un objet Gson
         Gson gson = new GsonBuilder()
