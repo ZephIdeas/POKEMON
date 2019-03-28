@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -25,46 +27,37 @@ public class MainActivity extends Activity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
+    private ProgressBar loader;
+    private MainController controller;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        loader = findViewById(R.id.loader_main_activity);
+
+        controller = new MainController(this);
+        controller.onCreate();
         // use this setting to
         // improve performance if you know that changes
         // in content do not change the layout size
         // of the RecyclerView
 
-        //On crée un objet Gson
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
+    }
 
-        //On crée un objet retrofit
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://pokeapi.co/api/v2/")
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
+    public void onItemClicked(Pokemon itemClicked) {
 
-        //On crée notre interface PokemonRestApi
-        PokemonRestApi pokemonRestApi = retrofit.create(PokemonRestApi.class);
+    }
 
-        //On récupère un objet call
-        Call<RestPokemonResponse> call = pokemonRestApi.getListPokemon();
+    public void showLoader() {
 
-        call.enqueue(new Callback<RestPokemonResponse>() {
-            @Override
-            public void onResponse(Call<RestPokemonResponse> call, Response<RestPokemonResponse> response) {
-                RestPokemonResponse restPokemonResponse = response.body();
-                List<Pokemon> listPokemon = restPokemonResponse.getResults();
-                showList(listPokemon);
-            }
+        loader.setVisibility(View.VISIBLE);
+    }
 
-            @Override
-            public void onFailure(Call<RestPokemonResponse> call, Throwable t) {
-                Log.d("Erreur", "API ERROR");
-            }
-        });
+    public void hideLoader() {
+
+        loader.setVisibility(View.GONE);
     }
 
     public void showList(List<Pokemon> list) {
