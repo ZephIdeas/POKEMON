@@ -22,6 +22,7 @@ git clone https://github.com/ZephIdes/POKEMON.git
 * Utilisation de ListView
 * Utilisation de RecyclerView
 * Appel à un webService - APIRest avec Retrofit
+* APK généré
 
 ## Améliorations
 
