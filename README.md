@@ -2,15 +2,17 @@
 
 Création d'un application affichant une liste de Pokémon du Pokédex
 
-# Lancement
+## Lancement
 
-Avoir Android Studio
+* Avoir Android Studio
 
-Ouvrir le projet dans Android Studio
+* Ouvrir le projet dans Android Studio
 
+```
 git clone https://github.com/ZephIdes/POKEMON.git
+```
 
-# Architecture MVC
+## Architecture MVC
 
 https://upload.wikimedia.org/wikipedia/commons/6/63/ModeleMVC.png
 
