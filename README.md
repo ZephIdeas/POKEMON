@@ -14,5 +14,5 @@ git clone https://github.com/ZephIdes/POKEMON.git
 
 ## Architecture MVC
 
-https://upload.wikimedia.org/wikipedia/commons/6/63/ModeleMVC.png
+![alt tag](https://upload.wikimedia.org/wikipedia/commons/6/63/ModeleMVC.png)
 
