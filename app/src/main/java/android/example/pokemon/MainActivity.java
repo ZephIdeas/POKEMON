@@ -1,6 +1,7 @@
 package android.example.pokemon;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.example.pokemon.model.Pokemon;
 import android.example.pokemon.model.RestPokemonResponse;
 import android.os.Bundle;
@@ -70,5 +71,10 @@ public class MainActivity extends Activity {
         //define an adapter
         mAdapter = new MyAdapter(list);
         recyclerView.setAdapter(mAdapter);
+    }
+
+    public void launchSecondActivity(View view) {
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
     }
 }
