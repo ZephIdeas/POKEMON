@@ -22,7 +22,7 @@ git clone https://github.com/ZephIdes/POKEMON.git
 * Utilisation de ListView
 * Utilisation de RecyclerView
 * Items cliquables
-* Appel à un webService - APIRest avec Retrofit
+* Appel à un webService - APIRest avec Retrofit : POKEAPI : https://pokeapi.co/docs/v2.html#pokemon-section
 * Gitflow
 * APK généré
 * Firebase
