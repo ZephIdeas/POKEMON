@@ -25,8 +25,8 @@ git clone https://github.com/ZephIdes/POKEMON.git
 * Appel à un webService - APIRest avec Retrofit
 * Gitflow
 * APK généré
+* Firebase
 
 ## Améliorations
 
 * Animation entre écrans
-* Notifications Push (Firebase)
