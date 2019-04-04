@@ -21,11 +21,16 @@ git clone https://github.com/ZephIdes/POKEMON.git
 * Architecture MVC
 * Utilisation de ListView
 * Utilisation de RecyclerView
-* Appel à un webService - APIRest avec Retrofit
-* git-flow
+* Appel à un WebService - APIRest avec Retrofit
+* Git-flow
 * APK généré
 
-## Améliorations
+### Ajouts supplémentaires
+
+* Logo de l'application personnalisé (image du pokédex pokémon)
+
+
+## Améliorations possibles
 
 * Animation entre écrans
 * Notifications Push (Firebase)
